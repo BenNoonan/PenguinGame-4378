@@ -5,7 +5,6 @@ switch(mpos){
     case 1:
         break;
     case 2:
-        room_goto(rm_test);
         break;
     case 3:
         break;

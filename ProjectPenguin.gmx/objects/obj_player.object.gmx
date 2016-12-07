@@ -30,7 +30,7 @@ grav = 0.4;
 hsp = 0; //horizontal speed
 vsp = 0; //vertical speed
 jumpspeed = 7;
-movespeed = 5;
+movespeed = 4;
 
 facing = 1;
 
@@ -64,8 +64,7 @@ if(global.checkpointR == room){
 key_right = keyboard_check(vk_right);
 key_left = -keyboard_check(vk_left);
 key_jump = keyboard_check_pressed(vk_space);
-key_restart = keyboard_check(ord('R'));
-
+ 
 //React to inputs
 move = key_left + key_right;
 hsp = move * movespeed;
@@ -75,7 +74,6 @@ if (place_meeting(x,y+1,obj_wall))
 {
     vsp = key_jump * -jumpspeed
 }
-if(key_restart) game_restart();
  
 //Horizontal Collision
 if (place_meeting(x+hsp,y,obj_wall))
@@ -121,10 +119,6 @@ else {
 if (place_meeting(x,y, obj_death_wall))
 {
     scr_death();
-}
-
-if(place_meeting(2025,y,obj_player)) {
-    instance_create(x,y,obj_fade);
 }
 </string>
           </argument>
